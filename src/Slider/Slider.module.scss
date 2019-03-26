@@ -1,0 +1,90 @@
+$height:300px;
+$sliderWidth:55%;
+$leftHoverWidth:70%;
+$rightHoverWidth:45%;
+$caption_distance:15em;
+.HeaderWrapper{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    height: $height;
+}
+.slanted_carousel{
+    position: relative;
+    .slider{
+        width:$sliderWidth;
+        overflow: hidden;
+        display: inline-block;
+        transform: skewX(-20deg);
+        transition: width .5s ease-in-out;
+        margin-left:-82px;
+        border-right: 10px solid white;
+        pointer-events: none;
+        position: relative;
+        z-index: 999;
+        &:hover{
+            width: $leftHoverWidth;
+        }
+    }
+    .caption{
+        width: 300px;
+        top: 50%;
+        bottom: 10px;
+        z-index: 1000;
+        padding: 10px;
+        position: absolute;
+        text-shadow: none;
+        transform: translate(0,-50%);
+        text-align: center;
+        background: rgba(0,0,0,0.5);
+        color:white;
+        h1, p{
+            margin: 0;
+        }
+        .Button{
+            border: 2px solid white;
+            background-color: rgba(255,255,255,0.6);
+            width: 150px;
+            height: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: all 0.3s;
+        }
+        .Button:hover{
+            background: white;
+            color:#ed9e00;
+            cursor: pointer;
+        }
+    }
+    .box{
+        width: 100%;
+        height: $height;
+    }
+    .carousel_left{
+        transform: skewX(20deg);
+        background: white url('../assets/woodbg-long.png') no-repeat;
+        background-color: #fff;
+        margin-left: 82px;
+        pointer-events: auto;
+        transition: filter .3s;
+        .left_caption{
+            left: $caption_distance;
+        }
+    }
+    .carousel_right{
+        background: black url('../assets/artbg-long.png') no-repeat right center;
+        background-color: #fff;
+        position: absolute;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.7); 
+        z-index: 100;
+        transition: filter .3s;
+        .right_caption{
+            right: $caption_distance;
+        }
+    }
+    .carousel_right:hover + .slider{
+        width: $rightHoverWidth;
+    }
+}

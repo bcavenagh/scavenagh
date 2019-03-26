@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative');
+.HomeIntro{
+    text-align: center;
+    .Sean{
+        font-family: 'Cinzel Decorative', cursive ;
+        font-size: 45px;
+        margin: 0;
+        padding: 10px;
+    }
+    .SocialLink{
+        color:black;
+        .SocialIcon{
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+            transition: all .3s;
+        }
+        .SocialIcon:hover{
+            color:#ed9e00;
+        }
+    }
+    .hr{
+        width:50%;
+    }
+}

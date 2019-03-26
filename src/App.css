@@ -1,6 +1,8 @@
 .App {
-  text-align: center;
+  background: #fff8e8;
 }
+/* 
+url('./assets/Patterns/fancy_deboss_@2X.png');
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -30,4 +32,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
