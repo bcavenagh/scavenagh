@@ -32,8 +32,8 @@ class Woodwork extends Component{
     }
     render(){
         return(
-            <div>
-                <DisplayWork projects={this.state.projects}/>
+            <div className={classes.Container}>
+                <DisplayWork title="Woodwork" projects={this.state.projects} wood={true}/>
             </div>
         );
     }

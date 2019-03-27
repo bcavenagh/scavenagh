@@ -12,12 +12,18 @@ class App extends Component{
         this.state = {
           showWoodwork:true
         }
-        this.toggleWork = this.toggleWork.bind(this);
+        this.showWood = this.showWood.bind(this);
+        this.showArt = this.showArt.bind(this);
     }
-    toggleWork = () => {
-      this.setState((prevState, props) => ({
-        showWoodwork: !prevState.showWoodwork
-      }));
+    showWood = () => {
+      this.setState({
+        showWoodwork: true
+      });
+    }
+    showArt = () => {
+      this.setState({
+        showWoodwork: false
+      });
     }
     render(){
       let showWork = <></>;
@@ -30,7 +36,7 @@ class App extends Component{
           <div className="App">
             <HomeIntro/>
             <About/>
-            <Slider toggle={this.toggleWork}/>
+            <Slider showWood={this.showWood} showArt={this.showArt}/>
             {showWork}
           </div>
         );

@@ -1,3 +1,6 @@
+.title{
+    text-align: center;
+}
 .DisplayWorkContainer{
     display: flex;
     width:75%;
@@ -10,7 +13,6 @@
         overflow: hidden;
         width: 250px;
         height: 250px;
-        background: url(https://via.placeholder.com/450) center center;
         .ProjectInfo{
             position: absolute;
             top:0;
@@ -58,4 +60,19 @@
             transform: scale(1);
         }
     }
+}
+.Pager{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    .CurrentPage{
+        color:red;
+    }
+    p{
+        width: 25px;
+        height: 25px;
+    }
+
 }
