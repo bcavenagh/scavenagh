@@ -1,30 +1,35 @@
-// import React from 'react';
-// import classes from './DisplayWork.module.scss';
-
-// const displayWork = (props) => {
-//     return(
-        
-//     );
-// };
-
-// export default displayWork; 
-
 import React, { Component } from 'react';
 import classes from './DisplayWork.module.scss';
+import ProjectModal from '../ProjectModal/ProjectModal';
+import Modal from '@material-ui/core/Modal';
 
 class DisplayWork extends Component{
     constructor(props){
         super(props);
         this.state = {
             currentPage:1,
-            projectsPerPage:3
+            projectsPerPage:3,
+            isProjectModalOpen: false,
+            projectModalObject: {}
         }
         this.handleChangePage = this.handleChangePage.bind(this);
+        this.openProjectModal = this.openProjectModal.bind(this);
+        
     }
     handleChangePage(event){
         this.setState({
             currentPage: Number(event.target.id)
         });
+    }
+    openProjectModal(project){
+        console.log(project)
+        this.setState({
+            projectModalObject:project,
+            isProjectModalOpen:true,
+        })
+    }
+    closeProjectModal = () => {
+        this.setState({isProjectModalOpen: false})
     }
     render(){
         let backgroundImage = 'url(https://source.unsplash.com/kKzbyDeb62M) center center';
@@ -42,11 +47,11 @@ class DisplayWork extends Component{
 
         const renderProjects = currentProjects.map((project, index) => {
             return (
-                <div className={classes.Project} style={{background: backgroundImage}}>
+                <div className={classes.Project} style={{background: backgroundImage}} key={index}>
                     <div className={classes.ProjectInfo}>
                         <h3 className={classes.ProjectTitle}>{project.name}</h3>
                         <p className={classes.ProjectPrice}>{project.price}</p>
-                        <button className={classes.ProjectDetailsButton}>View Details</button>
+                        <button className={classes.ProjectDetailsButton} onClick={() => this.openProjectModal(project)}>View Details</button>
                     </div>
                 </div>
             )
@@ -62,10 +67,10 @@ class DisplayWork extends Component{
             let currentPageClass = ''
             if(number === currentPage){currentPageClass = classes.CurrentPage}
             return (
-                <p key={number} id={number} onClick={this.handleChangePage} className={currentPageClass}>{number}</p>
+                <div key={number} id={number} onClick={this.handleChangePage} className={currentPageClass}>{number}</div>
             )
         })
-
+        
         return(
             <>
             <h3 className={classes.title}>{this.props.title}</h3>
@@ -73,6 +78,9 @@ class DisplayWork extends Component{
                 {renderProjects}
             </div>
             <div className={classes.Pager}>{renderPageNumbers}</div>
+            <Modal open={this.state.isProjectModalOpen} onClose={this.closeProjectModal}>
+                <ProjectModal project={this.state.projectModalObject}/>
+            </Modal>
             </>
         );
     }

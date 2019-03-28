@@ -9,7 +9,7 @@ class Woodwork extends Component{
             projects:[
                 {
                     name:'Woodwork #1',
-                    desc:'This is test number 1.',
+                    desc:'This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1. This is test number 1.',
                     price:'$150'
                 },
                 {

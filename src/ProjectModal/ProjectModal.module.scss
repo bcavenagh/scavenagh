@@ -1,0 +1,54 @@
+.Modal{
+    background: rgba(0,0,0,0.7);
+    width: 75%;
+    height: 75%;
+    position: relative;
+    color:white;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .ImageContainer{
+        width: 50%;
+        height: 100%;
+        background: red;
+        .Image{
+            position: fixed;
+            width: 100%;
+            background: url(../assets/Test.png) center center;
+            background-repeat: no-repeat;
+        }
+    }
+    .ProjectDesc{
+        width: 50%;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        .Head{
+            width: 100%;
+            text-align: center;
+            margin: 25px 0 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .Title{
+                // margin: 0;
+            }
+            .Price{
+                margin: 0 10px;
+                border: 1px solid white;
+                padding: 5px;
+                font-size: 18px;
+            }
+        }
+        .Description{
+            text-align: left;
+            width: 75%;
+        }
+        .divider{
+            width: 50%;
+        }
+    }
+}
