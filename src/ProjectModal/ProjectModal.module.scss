@@ -1,26 +1,32 @@
+$dark-gray:rgb(85,85,85);
+$light-gray:rgb(204, 204, 204);
 .Modal{
-    background: rgba(0,0,0,0.7);
+    background: white;
     width: 75%;
     height: 75%;
     position: relative;
-    color:white;
+    color:black;
     display: flex;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
+    color:$dark-gray;
+    box-shadow: 0px 3px 6px black;
     .ImageContainer{
         width: 50%;
+        min-height: 100%;
+        position: relative;
+    }
+    .Image{
+        width: 50%;
         height: 100%;
-        background: red;
-        .Image{
-            position: fixed;
-            width: 100%;
-            background: url(../assets/Test.png) center center;
-            background-repeat: no-repeat;
-        }
+        background: url(../assets/Test.png) center center;
+        background-repeat: no-repeat;
     }
     .ProjectDesc{
         width: 50%;
+        overflow: scroll;
         background: transparent;
         display: flex;
         justify-content: center;
@@ -38,17 +44,45 @@
             }
             .Price{
                 margin: 0 10px;
-                border: 1px solid white;
-                padding: 5px;
+                // border: 1px solid black;
+                background: rgb(204, 204, 204);
+                border-radius: 15px;
+                padding: 5px 10px;
                 font-size: 18px;
+                color: $dark-gray;
             }
         }
         .Description{
             text-align: left;
             width: 75%;
+            margin: 0 0 5px 0;
         }
         .divider{
             width: 50%;
         }
     }
+    .Close{
+        position: absolute;
+        top: -23px;
+        right: -23px;
+        // top: 0;
+        // right: 0;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+            width: 45px;
+            height: 45px;
+            background-color: white;
+            border-radius: 100%;
+        }
+    }
+    .Close:hover{
+        cursor: pointer;
+    }
+}
+.Modal:focus{
+    outline: 0;
 }

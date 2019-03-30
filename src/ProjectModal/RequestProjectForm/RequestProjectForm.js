@@ -4,7 +4,6 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import classNames from 'classnames';
 import emailjs from 'emailjs-com';
 
-
 class RequestProjectForm extends Component{
     constructor(props){
         super(props);
@@ -45,7 +44,7 @@ class RequestProjectForm extends Component{
     render(){
         return(
             <div className={classes.RequestProjectForm}>
-                <h4>Request this project</h4>
+                <h4>Request this or a similar project</h4>
                 <Formik
                     initialValues={{ name: '', email: '', message: '' }}
                     validate={values => {
@@ -76,7 +75,7 @@ class RequestProjectForm extends Component{
                             <ErrorMessage name="email" component="div" />
                             <Field component="textarea" name="message" placeholder="Message*" className={classNames(classes.FormInput, classes.TextArea)}/>
                             <ErrorMessage name="password" component="div" />
-                            <button type="submit" disabled={isSubmitting}>
+                            <button type="submit" className={classes.Submit} disabled={isSubmitting}>
                                 Submit
                             </button>
                         </Form>

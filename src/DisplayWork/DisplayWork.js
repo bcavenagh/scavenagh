@@ -79,7 +79,7 @@ class DisplayWork extends Component{
             </div>
             <div className={classes.Pager}>{renderPageNumbers}</div>
             <Modal open={this.state.isProjectModalOpen} onClose={this.closeProjectModal}>
-                <ProjectModal project={this.state.projectModalObject}/>
+                <ProjectModal close={this.closeProjectModal} project={this.state.projectModalObject}/>
             </Modal>
             </>
         );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './ProjectModal.module.scss';
 import RequestProjectForm from './RequestProjectForm/RequestProjectForm';
+import { FaTimesCircle } from "react-icons/fa";
 
 
 class ProjectModal extends Component{
@@ -13,9 +14,7 @@ class ProjectModal extends Component{
     render(){
         return(
             <div className={classes.Modal}>
-                <div className={classes.ImageContainer}>
-                    {/* <div className={classes.Image}></div> */}
-                </div>
+                <div className={classes.Image}></div>
                 <div className={classes.ProjectDesc}>
                     <div className={classes.Head}>
                         <h2 className={classes.Title}>{this.props.project.name}</h2>
@@ -25,6 +24,7 @@ class ProjectModal extends Component{
                     <hr className={classes.divider}/>
                     <RequestProjectForm/>
                 </div>
+                <div className={classes.Close} onClick={this.props.close}><FaTimesCircle/></div>
             </div>
         )
     }
